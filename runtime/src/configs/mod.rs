@@ -169,6 +169,6 @@ parameter_types! {
 
 impl pallet_voting::Config for Runtime {
     type RuntimeEvent = RuntimeEvent;
-    type MaxCandidates = MaxCandidates;
-    type MaxNameLength = MaxNameLength;
+    type MaxEncryptedVoteSize = MaxCandidates;
+    type MaxBlindSignatureSize = MaxNameLength;
 }
