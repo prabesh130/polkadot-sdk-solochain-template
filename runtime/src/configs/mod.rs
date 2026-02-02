@@ -163,12 +163,12 @@ impl pallet_template::Config for Runtime {
 	type WeightInfo = pallet_template::weights::SubstrateWeight<Runtime>;
 }
 parameter_types! {
-    pub const MaxCandidates: u32 = 100;
-    pub const MaxNameLength: u32 = 256;
+    pub const MaxCandidates: u64 = 100;
+    pub const MaxNameLength: u64 = 256;
 }
 
 impl pallet_voting::Config for Runtime {
     type RuntimeEvent = RuntimeEvent;
-    type MaxEncryptedVoteSize = MaxCandidates;
-    type MaxBlindSignatureSize = MaxNameLength;
+    type MaxEncryptedVoteSize = ConstU32<2048>;
+    type MaxBlindSignatureSize = ConstU32<512>;
 }
